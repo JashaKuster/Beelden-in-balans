@@ -29,6 +29,12 @@ De website leest automatisch alle mappen in:
 
 Na verversen van de pagina zie je direct de bijgewerkte lijst.
 
+## GitHub Pages
+
+Op GitHub Pages is de Node-server/API niet beschikbaar. Daarom toont de site daar automatisch een voorbeeldbeeld (`beelden/voorbeeld-beeld/01.svg`), zodat je direct ziet hoe de galerij werkt.
+
+Wil je je eigen beelden tonen, start de site lokaal met `node server.js`.
+
 ## Voorbeeldstructuur
 
 ```text

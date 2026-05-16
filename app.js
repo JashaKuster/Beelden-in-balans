@@ -13,6 +13,13 @@
   let sculptures = [];
   let activeSculpture = null;
   let activePhotoIndex = 0;
+  const fallbackSculptures = [
+    {
+      id: "voorbeeld-beeld",
+      title: "Voorbeeld Beeld",
+      images: ["./beelden/voorbeeld-beeld/01.svg"],
+    },
+  ];
 
   const setStatus = (message) => {
     status.textContent = message;
@@ -161,8 +168,10 @@
       sculptures = Array.isArray(data.sculptures) ? data.sculptures : [];
       renderGallery();
     } catch (_error) {
+      sculptures = fallbackSculptures;
+      renderGallery();
       setStatus(
-        "Er ging iets mis bij het laden van de beelden. Controleer of de server draait via node server.js.",
+        "Kon de server niet bereiken. Voorbeeldbeeld geladen zodat je kunt zien hoe de galerij werkt.",
       );
     }
   };
