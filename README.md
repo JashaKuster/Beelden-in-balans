@@ -8,7 +8,7 @@ Minimalistische website om beelden te tonen met een overzicht op de hoofdpagina 
 2. Start de server:
 
 ```bash
-node /home/runner/work/Beelden-in-balans/Beelden-in-balans/server.js
+node server.js
 ```
 
 3. Open daarna:
@@ -21,9 +21,7 @@ http://localhost:3000
 
 De website leest automatisch alle mappen in:
 
-```text
-/home/runner/work/Beelden-in-balans/Beelden-in-balans/beelden/
-```
+`./beelden/`
 
 - **Per beeld:** maak een eigen map (bijv. `beelden/dansend-figuur/`)
 - **Foto's:** zet `.jpg`, `.jpeg`, `.png`, `.webp`, `.gif` of `.svg` bestanden in die map
