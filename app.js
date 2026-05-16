@@ -13,6 +13,13 @@
   let sculptures = [];
   let activeSculpture = null;
   let activePhotoIndex = 0;
+  const fallbackSculptures = [
+    {
+      id: "voorbeeld-beeld",
+      title: "Voorbeeld Beeld",
+      images: [new URL("./beelden/voorbeeld-beeld/01.svg", window.location.href).href],
+    },
+  ];
 
   const setStatus = (message) => {
     status.textContent = message;
@@ -153,7 +160,7 @@
   const loadSculptures = async () => {
     setStatus("Beelden laden...");
     try {
-      const response = await fetch("/api/sculptures", { cache: "no-store" });
+      const response = await fetch("./api/sculptures", { cache: "no-store" });
       if (!response.ok) {
         throw new Error(`HTTP ${response.status}`);
       }
@@ -161,8 +168,10 @@
       sculptures = Array.isArray(data.sculptures) ? data.sculptures : [];
       renderGallery();
     } catch (_error) {
+      sculptures = fallbackSculptures;
+      renderGallery();
       setStatus(
-        "Er ging iets mis bij het laden van de beelden. Controleer of de server draait via node server.js.",
+        "Kon de server niet bereiken. Voorbeeldbeeld geladen zodat je kunt zien hoe de galerij werkt.",
       );
     }
   };
