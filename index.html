@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beelden in Balans</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="intro">
+        <h1>Beelden in Balans</h1>
+        <p>
+          Een minimalistische selectie van beelden. Klik op een beeld om de foto's
+          in groot formaat te bekijken.
+        </p>
+      </header>
+
+      <section aria-label="Overzicht beelden">
+        <div id="status" class="status" role="status" aria-live="polite"></div>
+        <div id="gallery" class="gallery"></div>
+      </section>
+    </main>
+
+    <div
+      id="modal"
+      class="modal hidden"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-title"
+    >
+      <div id="modal-overlay" class="modal-overlay"></div>
+      <div class="modal-content">
+        <button id="close-modal" class="close-button" aria-label="Sluit venster">
+          ×
+        </button>
+        <h2 id="modal-title" class="modal-title"></h2>
+        <div class="viewer">
+          <button id="prev-photo" class="nav-button" aria-label="Vorige foto">
+            ←
+          </button>
+          <img id="modal-image" alt="Foto van beeld" />
+          <button id="next-photo" class="nav-button" aria-label="Volgende foto">
+            →
+          </button>
+        </div>
+        <p id="photo-counter" class="photo-counter"></p>
+      </div>
+    </div>
+
+    <script src="/app.js" defer></script>
+  </body>
+</html>
