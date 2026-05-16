@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
+  <rect width="1200" height="900" fill="#f2f0ec"/>
+  <circle cx="600" cy="350" r="190" fill="#d8d0c4"/>
+  <rect x="520" y="500" width="160" height="230" rx="50" fill="#b8afa0"/>
+  <text x="600" y="820" text-anchor="middle" fill="#6f675d" font-family="Arial, sans-serif" font-size="38">Voorbeeld Beeld</text>
+</svg>
