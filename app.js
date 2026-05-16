@@ -17,7 +17,7 @@
     {
       id: "voorbeeld-beeld",
       title: "Voorbeeld Beeld",
-      images: [new URL("./beelden/voorbeeld-beeld/01.svg", window.location.href).href],
+      images: ["./beelden/voorbeeld-beeld/01.svg"],
     },
   ];
 
@@ -160,7 +160,7 @@
   const loadSculptures = async () => {
     setStatus("Beelden laden...");
     try {
-      const response = await fetch("./api/sculptures", { cache: "no-store" });
+      const response = await fetch("/api/sculptures", { cache: "no-store" });
       if (!response.ok) {
         throw new Error(`HTTP ${response.status}`);
       }
